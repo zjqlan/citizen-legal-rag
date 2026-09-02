@@ -22,7 +22,7 @@
 ## 环境
 
 - Python 3.10+
-- [Milvus](https://milvus.io/) 2.4+（本地 `http://127.0.0.1:19530`）
+- [Milvus](https://milvus.io/) 2.4+（默认连接本机 19530 端口）
 - DashScope / 通义千问 API Key
 - 本地模型目录（见 `models/README.md`）
   - `BAAI/bge-m3`
@@ -62,14 +62,10 @@ copy .env.example .env
 python scripts/crawl_flk_npc.py    # 采集公开法规（耗时较长，可跳过若已有 data/raw）
 python scripts/process_data.py     # 按条分块
 python scripts/ingest_kb.py        # 写入 Milvus
-python app.py                      # 问答服务，默认 http://127.0.0.1:8010
+python app.py                      # 启动问答服务（默认端口 8010）
 ```
 
-- 问答页：http://127.0.0.1:8010
-- 管理后台：http://127.0.0.1:8010/admin
-- 命令行调试：`python scripts/chat.py`
-
-试跑入库可用 `python scripts/ingest_kb.py --limit 200`。
+启动后在浏览器打开问答页，管理后台路径为 `/admin`。命令行调试：`python scripts/chat.py`。试跑入库可用 `python scripts/ingest_kb.py --limit 200`。
 
 ## 目录
 
