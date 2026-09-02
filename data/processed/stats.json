@@ -1,0 +1,20 @@
+{
+  "documents": 548,
+  "chunks": 30960,
+  "empty_skipped": 29,
+  "doc_types": {
+    "法律": 342,
+    "行政法规": 78,
+    "宪法": 7,
+    "司法解释": 121
+  },
+  "chunk_types": {
+    "article": 30589,
+    "window": 314,
+    "parent": 4,
+    "child": 53
+  },
+  "documents_path": "data/processed/documents.jsonl",
+  "chunks_path": "data/processed/chunks.jsonl",
+  "strategy": "按条切分；超长条按款做父子块；无条结构用滑动窗口"
+}

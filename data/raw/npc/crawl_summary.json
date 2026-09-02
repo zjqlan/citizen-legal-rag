@@ -1,0 +1,10 @@
+{
+  "source": "https://flk.npc.gov.cn",
+  "saved_this_run": 262,
+  "skipped_already_done": 315,
+  "done_ids": 1521,
+  "text_dir": "data/raw/npc/texts",
+  "file_dir": "data/raw/npc/files",
+  "manifest": "data/raw/npc/manifest.jsonl",
+  "scope": "宪法+法律全量（有效/尚未施行）；行政法规与司法解释按百姓高频关键词过滤；不含地方性法规。"
+}

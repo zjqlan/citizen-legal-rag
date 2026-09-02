@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>百姓普法助手</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/app.css?v=6" />
+</head>
+<body>
+  <div class="page">
+    <aside class="rail">
+      <div class="seal">法</div>
+      <h1>百姓普法助手</h1>
+      <p class="lead">用日常的话说出遇到的事，对照现行法律给一份能看懂的说明。</p>
+      <ul class="facts" id="facts">
+        <li>覆盖劳动、租房、消费、家庭、交通等高频问题</li>
+        <li>回答尽量带回法条出处，便于你自己核对</li>
+        <li>不含地方性法规，地方细则请再向当地核实</li>
+      </ul>
+        <div class="meta" id="metaBox">知识库加载中…</div>
+        <div class="hist">
+          <div class="hist-head">
+            <span>历史对话</span>
+          </div>
+          <div class="hist-list" id="histList">登录后可查看保存的对话。</div>
+        </div>
+        <p class="disclaimer">普法参考，不构成律师意见。紧急或重大事项请拨打 12348，或寻求专业法律服务。</p>
+    </aside>
+
+    <main class="stage">
+      <header class="topbar">
+        <span class="status" id="status"><i></i>连接中</span>
+        <div class="top-actions">
+          <button type="button" id="histBtn" class="ghost hist-toggle">历史</button>
+          <a class="ghost" id="adminLink" href="/admin?v=6" hidden>管理后台</a>
+          <span class="who" id="who" hidden></span>
+          <button type="button" id="logoutBtn" class="ghost" hidden>退出</button>
+          <button type="button" id="newChat" class="ghost">新对话</button>
+        </div>
+      </header>
+      <section class="thread" id="thread" aria-live="polite"></section>
+      <form class="composer" id="form">
+        <textarea id="input" rows="2" maxlength="2000" placeholder="例如：公司口头把我辞退了，有没有经济补偿？" required></textarea>
+        <button type="submit" id="send">询问</button>
+      </form>
+    </main>
+  </div>
+  <div id="authGate" class="auth-gate">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <div class="seal">法</div>
+        <h2>百姓普法助手</h2>
+        <p>登录后即可提问。账号保存在本机服务，需填写验证码。</p>
+      </div>
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab on" data-mode="login">登录</button>
+        <button type="button" class="auth-tab" data-mode="register">注册</button>
+      </div>
+      <form id="authForm">
+        <label>用户名
+          <input id="authUser" name="username" autocomplete="username" required minlength="3" maxlength="20" placeholder="3–20 个字" />
+        </label>
+        <label>密码
+          <input id="authPass" name="password" type="password" autocomplete="current-password" required minlength="6" maxlength="64" placeholder="至少 6 位" />
+        </label>
+        <div class="captcha-row">
+          <label>验证码
+            <input id="authCaptcha" name="captcha" autocomplete="off" required maxlength="8" placeholder="不区分大小写" />
+          </label>
+          <button type="button" id="captchaBox" class="captcha" title="点击刷新验证码" aria-label="点击刷新验证码"></button>
+        </div>
+        <p class="auth-err" id="authErr" hidden></p>
+        <button type="submit" id="authSubmit">登录</button>
+      </form>
+    </div>
+  </div>
+  <script src="/static/app.js?v=6"></script>
+</body>
+</html>
